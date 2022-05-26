@@ -30,14 +30,16 @@ void PrintArray(int[,] matrix)
 
 void MinSum(int[,] array)
 {
+    int x = array.GetLength(0);
+    int y = array.GetLength(1);
     int minSum = 0;
     int row = 0;
-    for (int j = 0; j < array.GetLength(1); j++) minSum = minSum + array[0, j];
+    for (int j = 0; j < y; j++) minSum = minSum + array[0, j];
 
-    for (int i = 1; i < array.GetLength(0); i++)
+    for (int i = 1; i < x; i++)
     {
         int rowSum = 0;
-        for (int j = 0; j < array.GetLength(1); j++) rowSum = rowSum + array[i, j];
+        for (int j = 0; j < y; j++) rowSum = rowSum + array[i, j];
         if (rowSum < minSum)
         {
             minSum = rowSum;
@@ -51,4 +53,5 @@ void MinSum(int[,] array)
 int[,] arr = new int[3, 5];
 FillArray(arr);
 PrintArray(arr);
+Console.WriteLine();
 MinSum(arr);
