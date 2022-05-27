@@ -1,4 +1,5 @@
-﻿// Задача ДЗ 2: Задайте прямоугольный двумерный массив. 
+﻿// Задача ДЗ 2: 
+// Задайте прямоугольный двумерный массив. 
 // Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
 void FillArray(int[,] matrix)
@@ -28,14 +29,13 @@ void PrintArray(int[,] matrix)
     }
 }
 
-void MinSum(int[,] array)
+void MinSumRow(int[,] array)
 {
     int x = array.GetLength(0);
     int y = array.GetLength(1);
     int minSum = 0;
     int row = 0;
     for (int j = 0; j < y; j++) minSum = minSum + array[0, j];
-
     for (int i = 1; i < x; i++)
     {
         int rowSum = 0;
@@ -54,4 +54,4 @@ int[,] arr = new int[3, 5];
 FillArray(arr);
 PrintArray(arr);
 Console.WriteLine();
-MinSum(arr);
+MinSumRow(arr);

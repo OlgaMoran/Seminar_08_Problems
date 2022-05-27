@@ -39,7 +39,6 @@ int[,] SwapFirstLastRows(int[,] array)
         temp = array[a - 1, j];
         array[a - 1, j] = array[0, j];
         array[0, j] = temp;
-
     }
     return array;
 }

@@ -29,25 +29,24 @@ void PrintArray(int[,] matrix)
     }
 }
 
-
 void SwapRowsAndColumns(int[,] array)
 {
-int x = array.GetLength(0);
-int y = array.GetLength(1);
-int temp = 0;
-if (x == y)
-{
-    for (int i = 0; i < x - 1; i++)
+    int x = array.GetLength(0);
+    int y = array.GetLength(1);
+    int temp = 0;
+    if (x == y)
     {
-        for (int j = i + 1; j < y; j++)
+        for (int i = 0; i < x - 1; i++)
         {
-            temp = array[i, j];
-            array[i, j] = array[j, i];
-            array[j, i] = temp;
+            for (int j = i + 1; j < y; j++)
+            {
+                temp = array[i, j];
+                array[i, j] = array[j, i];
+                array[j, i] = temp;
+            }
         }
     }
-}
-else Console.WriteLine($"Can't do the swap. Number of rows should be equal to number of columns!");
+    else Console.WriteLine($"Can't do the swap. Number of rows should be equal to number of columns!");
 }
 
 int[,] arr = new int[4, 4];
@@ -57,8 +56,4 @@ FillArray(arr);
 PrintArray(arr);
 Console.WriteLine();
 SwapRowsAndColumns(arr);
-if(x == y) PrintArray(arr);
-
-
-
-
+if (x == y) PrintArray(arr);
